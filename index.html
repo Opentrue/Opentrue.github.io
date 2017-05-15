@@ -414,7 +414,12 @@
 		  // setTimeout(function(){
 		  	document.body.onmousewheel = function(event) {
 			    event = event || window.event;
-			    nextSlide();
+			    console.log(event);
+			    if(event.wheelDelta==-120){
+			    	nextSlide();
+			    }else if(event.wheelDelta==120){
+			    	prevSlide();
+			    }
 			};
 		// },2000);
 		  
