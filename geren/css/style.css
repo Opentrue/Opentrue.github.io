@@ -226,15 +226,16 @@ html, body {
   width: 200px;
 }
 .container2 h1{
+    padding-bottom: 20px;
+    margin-left: 23px;
     margin: 0;
     color: #ffffff;
     font-size: 36px;
-    font-weight: 500;
-    letter-spacing: 18px;
+    letter-spacing: 10px;
     text-align: center;
-    padding-bottom: 20px;
-    margin-left: 23px;
-    font-family: 'Bree Serif', serif;
+    padding-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
 }
 .container{
   display: block;
@@ -372,13 +373,14 @@ background-repeat: no-repeat; */
   text-align: center;
 }
 .myskills h3{
-  margin: 0;
+    margin: 0;
     color: #ffffff;
     font-size: 36px;
-    font-weight: 500;
-    letter-spacing: 18px;
+    letter-spacing: 10px;
     text-align: center;
     padding-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
 }
 .myskills .cd{
   width: 100%;
@@ -408,4 +410,105 @@ background-repeat: no-repeat; */
 }
 .erhang{
   margin-top: 10px;
+}
+.padding-120 {
+    padding: 120px 0px;
+}
+.container00 {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.text-center {
+    text-align: center;
+}
+.section-header h3 {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    margin-top: -10px;
+    font-size: 36px;
+}
+.container00 p{
+    font-size: 14px;
+    color: #55575d;
+    line-height: 24px;
+    margin: 15px 0 1.75em;
+}
+.section-header {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.contact-us .contact-input {
+    width: 100%;
+    border: 1px solid #e4e7e9;
+    border-radius: 3px;
+    outline: none;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #a3a8ab;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+}
+.container00 textarea {
+    color: #1a1a1a;
+    font-family: 'Lora', sans-serif;
+    line-height: 1.75;
+    overflow: auto;
+    vertical-align: top
+}
+.contact-us .contact-submit {
+    text-transform: uppercase;
+    padding: 15px 30px;
+    background: #1a1a1a;
+    border: 0;
+    border-radius: 2px;
+    color: #fff;
+    font-family: 'Lora', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.046875em;
+    line-height: 1;
+}
+.info-item {
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.contact-info .icon {
+    float: left;
+    margin-right: 15px;
+}
+.contact-info .icon span {
+    display: block;
+    height: 60px;
+    width: 60px;
+    background-color: #f6f6f6;
+    color: #55575d;
+    font-size: 36px;
+    text-align: center;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+}
+.contact-info .content {
+    display: table;
+}
+.contact-info .content p {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 500;
+    color: #959595;
+    margin: 0px;
+}
+.contact-form{
+  float: left;
 }
