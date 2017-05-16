@@ -1,0 +1,802 @@
+.banner{
+	width: 100%;
+	height: 5rem;
+	background-image: url('../img/uibanner.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+	overflow: hidden
+}
+.bannerc{
+	width: 100%;
+	height: 4.14rem;
+	background-image: url('../img/uibanners.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin-top: 0.86rem;
+	z-index: 1;
+}
+header{
+    width: 100%;
+    height: 0.89rem;
+    background: rgba(0, 123, 227, 0.4);
+    top: 0;
+    position: fixed;
+    z-index: 1000;
+}
+.box2 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.box2 li {
+    font-size: 0.32rem;
+    border-bottom: 0.04rem;
+}
+.box2 li {
+    width: 20%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.box2 li a {
+    font-size: 0.32rem;
+}
+.box2 li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 0.28rem;
+    line-height: 1rem;
+    border: none;
+    text-align: center;
+}
+.ui {
+    width: 100%;
+    position: relative;
+}
+.ui1 {
+    width: 7.02rem;
+    height: 100%;
+    margin: 0 auto;
+    margin: 0 0.24rem;
+}
+.ui1H {
+    width: 100%;
+    height: 0.9rem;
+    margin: 0.4rem auto;
+}
+.ui1H h2 {
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.36rem;
+    color: #333;
+    text-transform: uppercase;
+}
+.uiH2 {
+    width: 2.7rem;
+    height: 0.1rem;
+    margin: 0 auto;
+    position: relative;
+    background: url('../img/ui1lines.png') center center no-repeat;
+    background-size: 100%;
+}
+.ui1H h2:last-child {
+    font-size: 0.3rem;
+    line-height: 0.3rem;
+}
+.ui0B {
+    width: 6.8rem;
+    height: 5.4rem;
+    margin: 0.2rem auto;
+}
+.ui0B ul {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.ui0B li:nth-child(1,2) {
+    margin-top: 0rem;
+}
+.ui0B li:nth-child(6) {
+    margin-right: 0;
+    margin-top: 0.2rem;
+}
+.ui0B li {
+    width: 2.1rem;
+    height: 2.5rem;
+    float: left;
+    overflow: hidden;
+    margin-top: 0.2rem;
+    margin-right: 0.2rem;
+}
+.ui0B li:nth-child(3) {
+    margin-right: 0;
+    margin-top: 0.2rem;
+}
+.ui0B li div {
+    width: 2.1rem;
+    height: 1.1rem;
+    background: url('../img/fwtx1.png') center center no-repeat;
+    background-size: 100%;
+    color: #fff;
+    font-size: 0.28rem;
+    line-height: 1.1rem;
+    font-weight: 600;
+    padding-left: 0.8rem;
+}
+.ui0B li p {
+    width: 2.1rem;
+    height: 1.4rem;
+    color: #333;
+    font-size: 0.26rem;
+    line-height: 0.32rem;
+    text-align: center;
+    padding-top: 0.2rem;
+    border: 1px dashed #f2a111;
+}
+.ui0B li:nth-child(2) p {
+    border: 1px dashed #2f90da;
+}
+.ui0B li:nth-child(3) p {
+    border: 1px dashed #f87844;
+}
+.ui0B li:nth-child(4) p {
+    border: 1px dashed #1bbf99;
+}
+.ui0B li:nth-child(5) p {
+    border: 1px dashed #f8ce68;
+}
+.ui0B li:nth-child(6) p {
+    border: 1px dashed #c16bbb;
+}
+
+.ui0B li .ui0title2 {
+    background: url('../img/fwtx2.png') center center no-repeat;
+    background-size: 100%;
+}
+.ui0B li .ui0title3 {
+    background: url('../img/fwtx3.png') center center no-repeat;
+    background-size: 100%;
+}
+.ui0B li .ui0title4 {
+    background: url('../img/fwtx4.png') center center no-repeat;
+    background-size: 100%;
+}
+.ui0B li .ui0title5 {
+    background: url('../img/fwtx5.png') center center no-repeat;
+    background-size: 100%;
+}
+.ui0B li .ui0title6 {
+    background: url('../img/fwtx6.png') center center no-repeat;
+    background-size: 100%;
+}
+.ui2 {
+    height: 7.6rem;
+    overflow: hidden;
+    position: relative;
+}
+.ui1h1{
+    width: 100%;
+    height: 1.3rem;
+    margin: 0 auto;
+    padding: 0.4rem 0;
+    background: url('../img/uititle1.png') center center no-repeat;
+    background-size: 100%;
+    position: relative;
+    z-index: 20;
+}
+.ui1h1 h1{
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.36rem;
+    color: white;
+}
+.fenge{
+    width: 2.7rem;
+    height: 0.1rem;
+    margin: 0 auto;
+    position: relative;
+    background: url('../img/ui2lines.png') center center no-repeat;
+    background-size: 100%;
+}
+.fenge1{
+    width: 2.7rem;
+    height: 0.1rem;
+    margin: 0 auto;
+    position: relative;
+    background: url('../img/ui2lines.png') center center no-repeat;
+    background-size: 100%;
+}
+.ui1h1 h2{
+    font-size: 0.3rem;
+    line-height: 0.3rem;
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    color: white;
+}
+.ui1-nr{
+    width: 7.02rem;
+    height: 100%;
+    margin: 0 auto;
+}
+.ui1cont {
+    width: 7.02rem;
+    height: 3.15rem;
+    border: 1px dashed #030000;
+    background: #f5f5f5;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.ui1cont p {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    line-height: 0.36rem;
+    color: #333;
+    font-size: 0.26rem;
+    margin-top: 0.1rem;
+}
+.ui1cont p span {
+    color: #00a8ff;
+}
+.ui1cont p:nth-child(1){
+    margin-bottom: 0.1rem;
+}
+.ui1-footer{
+    width: 100%;
+    height: 3.74rem;
+    background: url('../img/ui11s.png') center center no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+
+.ui3 {
+    margin-top: -0.26rem;
+    height: 13.7rem;
+}
+.ui1h2{
+    width: 100%;
+    height: 1.3rem;
+    margin: 0 auto;
+    padding: 0.4rem 0;
+    background: url('../img/uititle2.png') center center no-repeat;
+    background-size: 100%;
+    position: relative;
+    z-index: 20;
+}
+.ui3 h1{
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.36rem;
+    color: white;
+}
+.ui3 h2{
+    font-size: 0.3rem;
+    line-height: 0.3rem;
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    color: white;
+}
+.ui3-box{
+    width: 100%;
+    height: 12.4rem;
+    background: #1b1d32;
+    margin-top: -0.4rem;
+    padding-top: 0.4rem;
+}
+.ui3tiao {
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0.1rem;
+}
+.ui3-txt{
+    width: 2.46rem;
+    height: 0.8rem;
+    margin: 0 auto;
+    padding: 0.2rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.3rem;
+    border-bottom: 0.02rem dashed #fff;
+    position: relative;
+    color: #f5f5f5;
+}
+.ui3-buf{
+    width: 7.02rem;
+    height: 4.17rem;
+    margin: 0 auto;
+    background: url('../img/bfb.png') center center no-repeat;
+    background-size: 100%;
+    margin-top: 0.25rem;
+    position: relative;
+    position: absolute;
+    top: 22rem;
+    left: 0.2rem;
+}
+.ui3-buf div{
+    height: 0.32rem;
+    position: absolute;
+    left: 1.1rem;
+}
+.bfb1 {
+    top: 0.48rem;
+    background: #fff100;
+}
+.bfb2 {
+    top: 1.1rem;
+    background: #1dffbd;
+}
+.bfb3 {
+    top: 1.71rem;
+    background: #0c51ff;
+}
+.bfb4 {
+    top: 2.30rem;
+    background: #00a8ff;
+}
+.bfb5 {
+    top: 2.96rem;
+    background: #1befe8;
+}
+.pjxx {
+    width: 7.02rem;
+    height: 4.8rem;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 0.3rem;
+    position: relative;
+    position: absolute;
+    top: 26.5rem;
+    left: 0.2rem;
+}
+.pjxx ul{
+    width: 3.41rem;
+    height: 4.8rem;
+    overflow: hidden;
+    margin: 0 auto;
+    position: absolute;
+}
+.pjxx li{
+    padding-top: 0.14rem;
+    width: 3.41rem;
+    height: 2.21rem;
+    overflow: hidden;
+    background: url('../img/ui2back.png') center center no-repeat;
+    background-size: 100%;
+    margin-top: 0.19rem;
+}
+.pjxx p {
+    font-size: 0.24rem;
+    line-height: 0.4rem;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 1.67rem;
+    overflow: hidden;
+}
+.pjxx span {
+    display: block;
+    width: 100%;
+    font-size: 0.3rem;
+    line-height: 0.4rem;
+    text-align: center;
+    color: #fff;
+}
+.ui3-btn {
+    display: block;
+    width: 2.99rem;
+    height: 0.8rem;
+    margin: -1rem auto;
+    background: url('../img/btn.png') center center no-repeat;
+    background-size: 100%;
+    color: #fff;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.28rem;
+    margin-left: 2.2rem;
+}
+.ui4-btn {
+    display: block;
+    width: 2.99rem;
+    height: 0.8rem;
+    margin: 0.5rem auto;
+    background: url('../img/btn.png') center center no-repeat;
+    background-size: 100%;
+    color: #fff;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.28rem;
+}
+.ui1h3{
+    width: 100%;
+    height: 1.3rem;
+    margin: 0 auto;
+    padding: 0.4rem 0;
+    background: url('../img/uititle1.png') center center no-repeat;
+    background-size: 100%;
+    position: relative;
+    z-index: 20;
+}
+
+.ui4 {
+    margin-top: -0.6rem;
+    /* height: 13.7rem; */
+}
+.ui4 h1{
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.36rem;
+    color: white;
+}
+.ui4 h2{
+    font-size: 0.3rem;
+    line-height: 0.3rem;
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    color: white;
+}
+.ui4con {
+    margin-top: 0.1rem;
+    width: 7.02rem;
+    height: 100%;
+    margin: 0 auto;
+}
+.stu_lists {
+    width: 7.02rem;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 0.4rem;
+}
+.title_name {
+    width: 100%;
+    height: 0.6rem;
+}
+.title_name p {
+    color: #fff;
+    font-size: 0.26rem;
+    line-height: 0.6rem;
+    height: 0.6rem;
+    border-radius: 0.1rem 0.1rem 0 0;
+    background: #40abfd;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    width: 1.3rem;
+}
+.title_name p:nth-child(2) {
+    width: 1.8rem;
+    background: #219eff;
+}
+.title_name p:nth-child(3) {
+    width: 3.92rem;
+    background: #118ded;
+}
+.big_box{
+    border: 1px solid #1875ff;
+    margin: 0 auto;
+    height: 3.5rem;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.big_box li {
+    width: 100%;
+    height: 0.7rem;
+    overflow: hidden;
+}
+.big_box li p {
+    height: 0.7rem;
+    overflow: hidden;
+    float: left;
+    font-size: 0.26rem;
+    color: #666;
+    line-height: 0.7rem;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+.big_box li .ld-moneycolor {
+    color: #feaf34;
+    width: 1.8rem;
+    text-transform: uppercase;
+}
+.stu_name {
+    width: 1.3rem;
+}
+.stu_welfare {
+    width: 3.87rem;
+}
+.ui5{
+    width: 100%;
+    position: relative;
+    background: #EFF0F4;
+}
+.ui1h4{
+    width: 100%;
+    height: 1.3rem;
+    margin: 0 auto;
+    padding: 0.4rem 0;
+    background: url('../img/uititle3.png') center center no-repeat;
+    background-size: 100%;
+    position: relative;
+    z-index: 20;
+}
+.ui5 h1{
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.36rem;
+    color: white;
+}
+.ui5 h2{
+    font-size: 0.3rem;
+    line-height: 0.3rem;
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    color: white;
+}
+.ui5con{
+    width: 7.02rem;
+    height: 100%;
+    margin: 0 auto;
+}
+.ui5con ul {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 0.3rem;
+}
+.ui5con li {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+    margin-top: 0.4rem;
+    margin-left: 100%;
+}
+.ui41 {
+    border-top: 2px solid #f88c00;
+}
+.ui5con span{
+    display: block;
+    width: 100%;
+    height: auto;
+    color: #333;
+    overflow: hidden;
+    font-size: 0.3rem;
+    padding: 0.1rem 0.2rem;
+    margin-top: 0.2rem;
+    line-height: 0.32rem;
+}
+.ui5con p{
+    width: 100%;
+    height: auto;
+    padding: 0.2rem;
+    overflow: hidden;
+    margin-top: 0.1rem;
+    border-top: 1px dashed #a0a0a0;
+    font-size: 0.26rem;
+    line-height: 0.36rem;
+    text-align: justify;
+    color: #666;
+    letter-spacing: 1px;
+}
+.ui42{
+    border-top: 2px solid #32afff;
+}
+.ui43{
+    border-top: 2px solid #eb6877;
+}
+.ui44{
+    border-top: 2px solid #22ac38;
+}
+.ui45{
+    border-top: 2px solid #ea61d5;
+}
+.ui46{
+    border-top: 2px solid #13e5e3;
+}
+.ui6{
+    width: 100%;
+    position: relative;
+    margin-top: 0.5rem;
+}
+.ui61{
+    width: 100%;
+    height: 1.3rem;
+    margin: 0 auto;
+    padding: 0.4rem 0;
+    background: url('../img/uititle2.png') center center no-repeat;
+    background-size: 100%;
+    position: relative;
+    z-index: 20;
+}
+.ui6 h1{
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.36rem;
+    color: white;
+}
+.ui6 h2{
+    font-size: 0.3rem;
+    line-height: 0.3rem;
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    color: white;
+}
+.ui62{
+    width: 7.02rem;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+}
+.ui62 ul{
+    width: 100%;
+    height: 2.63rem;
+    overflow: hidden;
+    margin-top: 0.1rem;
+}
+.ui62 .ui5li1 {
+    background: url('../img/ui51.png') center center no-repeat;
+    background-size: 100%;
+}
+.ui62 .ui5li2 {
+    background: url('../img/ui52.png') center center no-repeat;
+    background-size: 100%;
+    margin-right: 0;
+}
+.ui62 ul li {
+    width: 3.46rem;
+    margin-right: 0.1rem;
+    height: 2.63rem;
+    overflow: hidden;
+    float: left;
+}
+.ui63 li {
+    width: 7.02rem;
+    background: url('../img/ui53.png') center center no-repeat;
+    background-size: 100%;
+}
+.ui62 .ui63 li {
+    width: 100%;
+    margin-right: 0.1rem;
+    height: 2.63rem;
+    overflow: hidden;
+    float: left;
+}
+.ui62 .ui5li3 {
+    background: url('../img/ui54.png') center center no-repeat;
+    background-size: 100%;
+}
+.ui62 .ui5li4 {
+    background: url('../img/ui55.png') center center no-repeat;
+    background-size: 100%;
+    margin-right: 0;
+}
+.ui7 .ui61{
+    width: 100%;
+    height: 1.3rem;
+    margin: 0 auto;
+    padding: 0.4rem 0;
+    background: url('../img/uititle1.png') center center no-repeat;
+    background-size: 100%;
+    position: relative;
+    z-index: 20;
+}
+.ui7co p {
+    width: 100%;
+    height: 0.85rem;
+    font-size: 0.28rem;
+    color: #333;
+    text-align: center;
+    line-height: 0.85rem;
+    font-weight: 600;
+}
+.f-box .content{
+    padding: 0 0.7rem 0;
+}
+form {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.table_form {
+    font-size: 12px;
+}
+.table_form tr {
+    width: 100%;
+    height: 0.6rem;
+}
+.table_form tr th {
+    width: 1.2rem!important;
+    height: 0.6rem;
+    display: block;
+    color: #333;
+    font-size: 0.3rem;
+    line-height: 0.6rem;
+    float: left;
+    margin-top: 0.4rem;
+    border: none!important;
+}
+tbody th {
+    border-bottom: 1px solid #eee;
+}
+input.input-text {
+    float: left;
+    color: #333;
+    font-size: 0.3rem;
+    background: url('../img/input.png') center center no-repeat;
+    background-size: 100%;
+    border: none;
+    outline: none;
+    width: 4.0rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    text-indent: 1em;
+    margin-top: 0.4rem;
+}
+form select {
+    float: left;
+    color: #333;
+    font-size: 0.3rem;
+    background: url('../img/input.png') center center no-repeat;
+    background-size: 100%;
+    border: none;
+    outline: none;
+    width: 4.0rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    text-indent: 1em;
+    margin-top: 0.4rem;
+}
+.submit input {
+    display: block;
+    width: 2.99rem;
+    height: 0.8rem;
+    text-indent: 0;
+    color: #fff;
+    background: url('../img/btn.png') center center no-repeat;
+    background-size: 100%;
+    text-align: center;
+    line-height: 0.8rem;
+    outline: none;
+    border: none!important;
+    font-size: 0.3rem;
+    margin-top: 0.5rem;
+}
+.tea_copyright {
+    width: 100%;
+    height: 1.2rem;
+    font-size: 0.3rem;
+    overflow: hidden;
+}
+.tea_copyright p {
+    color: #666;
+    font-size: 0.2rem;
+    text-align: center;
+    padding-top: 0.18rem;
+    box-sizing: border-box;
+}
