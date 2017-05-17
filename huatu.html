@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        canvas{
+            background: #ccc;
+            margin: 0 auto;
+            display: block;
+        }
+        .controls{
+            width: 200px;height: 100%;
+            background: #a8753f;
+            position: absolute;
+            left: 0;top: 0;
+            background: linear-gradient(45deg,#ccc 0,#ccc 50%,#999 50%,#999 100%);
+        }
+        .controls section{
+            width: 100%;height: 30px;
+            margin-bottom: 15px;
+        }
+        section label{
+            width:50%;float: left;
+            height: 30px;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+        }
+        section select,input:not([type=button]){
+            width: 50%;
+            height: 30px;
+            float: left;
+            border: 0;
+            background: #ccc;
+            padding: 0;
+        }
+        input[type=button]{
+            width: 150px;
+            height: 30px;
+            background: #7abaff;
+            color:white;
+            border: 0;
+            border-radius: 5px;
+            margin: 15px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500"></canvas>
+    <div class="controls">
+        <section>
+            <label for="">选择形状</label>
+            <select name="" id="shape">
+                <option value="rect">矩形</option>
+                <option value="line">直线</option>
+                <option value="circleout">外接圆</option>
+                <option value="circlein">内切圆</option>
+                <option value="circlecenter">固定圆心</option>
+                <option value="poly">多边形</option>
+                <option value="pen">铅笔</option>
+                <option value="eraser">橡皮</option>
+            </select>
+        </section>
+        <section>
+            <label for="">选择边数</label>
+            <input type="number" id="side" value="3" min="3" max="12">
+        </section>
+        <section>
+            <label for="">选择原色</label>
+            <input type="color" id="color">
+        </section>
+        <section>
+            <label for="width">选择线宽</label>
+            <input type="number" id="width" value="2" step="2" min="2" max="20">
+        </section>
+        <section>
+            <label for="style">选择方式</label>
+            <select  id="style">
+                <option value="stroke">描边</option>
+                <option value="fill">填充</option>
+            </select>
+        </section>
+        <input type="button" value="撤销" id="redo">
+        <input type="button" value="保存" id="save">
+        <input type="button" value="清空" id="clear">
+    </div>
+</body>
+<script>
+    var canvas=document.querySelector("canvas");
+    var shape=document.querySelector("#shape");
+    var color=document.querySelector("#color");
+    var width=document.querySelector("#width");
+    var style=document.querySelector("#style");
+    var side=document.querySelector("#side");
+    var redo=document.querySelector("#redo");
+    var save=document.querySelector("#save");
+    var clear=document.querySelector("#clear");
+//    var pen=document.querySelector("#pen");
+    var s="rect";
+
+    shape.onchange=function () {
+        s=this.value;
+    };
+    var c="#000";
+    color.onchange=function () {
+        c=this.value;
+    };
+    var w="2";
+    width.onchange=function () {
+        w=this.value;
+    };
+    var st="stroke";
+    style.onchange=function () {
+        st=this.value;
+    }
+    var si="3";
+    side.onchange=function () {
+        si=this.value;
+    };
+    redo.onclick=function () {
+        if(data.length==0){
+            alert("meile");
+            return;
+        }
+        cobj.clearRect(0,0,500,500);
+        data.pop();
+        if(data.length==0){
+            return;
+        }
+        cobj.putImageData(data[data.length-1],0,0)
+    };
+    save.onclick=function () {
+        var r=canvas.toDataURL();
+        location.assign(r);
+    };
+    clear.onclick=function () {
+        cobj.clearRect(0,0,500,500)
+        data=[];
+    };
+    var cobj=canvas.getContext("2d");
+    var data=[];
+    canvas.onmousedown=function (e) {
+        var ox=e.offsetX;
+        var oy=e.offsetY;
+        var draw=new Draw(cobj,{color:c,width:w,style:st});
+        if(s=="pen"){
+            cobj.beginPath();
+            cobj.moveTo(ox,oy);
+        }
+        canvas.onmousemove=function (e) {
+          var mx=e.offsetX;
+          var my=e.offsetY;
+            if(s!=="eraser"){
+                cobj.clearRect(0,0,500,500);
+                if(data.length!=0){
+                    cobj.putImageData(data[data.length-1],0,0);
+                }
+            }
+            draw[s](ox,oy,mx,my,si);
+        };
+        document.onmouseup=function () {
+            data.push(cobj.getImageData(0,0,500,500));
+            canvas.onmousemove=null;
+            document.onmouseup=null;
+        }
+    }
+
+</script>
+<script>
+    class Draw{
+        constructor(cobj,option){
+            this.cobj=cobj;
+            this.color=option.color;
+            this.width=option.width;
+            this.style=option.style;
+            this.side=option.side;
+        }
+        rect(ox,oy,mx,my){
+            this.init();
+//            this.cobj.strokeRect(ox,oy,mx-ox,my-oy);
+            this.cobj.beginPath();
+            this.cobj.rect(ox,oy,mx-ox,my-oy);
+            this.cobj[this.style]();
+        }
+        line(ox,oy,mx,my){
+            this.init();
+            this.cobj.beginPath();
+            this.cobj.moveTo(ox,oy);
+            this.cobj.lineTo(mx,my);
+            this.cobj.stroke();
+        }
+        init(){
+            this.cobj.strokeStyle=this.color;
+            this.cobj.fillStyle=this.color;
+            this.cobj.lineWidth=this.width;
+        }
+        circlein(ox,oy,mx,my){
+            this.init();
+            this.cobj.beginPath();
+//            this.cobj.save();
+//            this.cobj.transform(ox,oy);
+//            var r=Math.sqrt(Math.pow(mx-ox,2)+Math.pow(my-oy,2))/2;
+//            this.arc(ox+(mx-ox)/2,oy+(my-oy)/2,r,0,2*Math.PI);
+            var r=Math.abs(mx-ox)>Math.abs(my-oy)?Math.abs(my-oy)/2:Math.abs(mx-ox)/2;
+            this.cobj.arc(ox+(mx>ox?r:-r),oy+(my>oy?r:-r),r,0,2*Math.PI);
+            this.cobj[this.style]();
+//            this.cobj.restore;
+        }
+        circleout(ox,oy,mx,my){
+            this.init(ox,oy,mx,my);
+            this.cobj.beginPath();
+            var r=Math.sqrt(Math.pow(mx-ox,2)+Math.pow(my-oy,2))/2;
+            this.cobj.arc(ox+(mx-ox)/2,oy+(my-oy)/2,r,0,2*Math.PI);
+//            var r=Math.abs(mx-ox)>Math.abs(my-oy)?Math.abs(my-oy)/2:Math.abs(mx-ox)/2;
+//            this.cobj.arc(ox+(mx>ox?r:-r),oy+(my>oy?r:-r),r,0,2*Math.PI);
+            this.cobj[this.style]();
+        }
+        circlecenter(ox,oy,mx,my){
+            this.init();
+            this.cobj.beginPath();
+            //var r=Math.abs(mx-ox)>Math.abs(my-oy)?Math.abs(my-oy)/2:Math.abs(mx-ox);
+            var r=Math.sqrt(Math.pow(mx-ox,2)+Math.pow(my-oy,2));
+            this.cobj.arc(ox,oy,r,0,2*Math.PI);
+            this.cobj[this.style]();
+        }
+        poly(ox,oy,mx,my,s){
+            this.init();
+            this.cobj.save();
+            this.cobj.translate(ox,oy);
+            this.cobj.rotate(Math.PI/2);
+            var angle=Math.PI/s;
+            var r=Math.sqrt(Math.pow(mx-ox,2)+Math.pow(my-oy,2));
+            var x=Math.cos(angle)*r;
+            var y=Math.sin(angle)*r;
+            this.cobj.beginPath();
+            this.cobj.moveTo(x,y);
+            for(var i=0;i<s;i++){
+                this.cobj.lineTo(x,-y);
+                this.cobj.rotate(-angle*2);
+            }
+            this.cobj[this.style]();
+            this.cobj.restore();
+        }
+        pen(ox,oy,mx,my){
+            this.init();
+            this.cobj.lineTo(mx,my);
+            this.cobj.stroke();
+//            this.stroke();
+        }
+        eraser(ox,oy,mx,my){
+            this.cobj.clearRect(mx,my,20,20)
+        }
+    }
+</script>
+</html>
