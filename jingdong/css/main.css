@@ -2254,7 +2254,7 @@ section.aishenghuo  .aiguangtop3 .aiguangma3{
     height: 24px;
     line-height: 24px;
     padding: 0 10px;
-    border: 1px solid #c187af;
+    border: 1px solid white;
     color: #fff;
     margin-left: 10px;
     margin-bottom: 10px;
@@ -2264,7 +2264,7 @@ section.aishenghuo  .aiguangtop3 .aiguangma3{
     word-break: break-all;
     white-space: nowrap;
     text-overflow: ellipsis;
-    background-color: #ac6f93;
+    background-color: #77b6c3;
     text-align: center;
 }
 .aiguang3 #aiguangxia5{

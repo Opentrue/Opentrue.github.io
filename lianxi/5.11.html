@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;border: 0;
+            list-style: none;
+            padding: 0;
+        }
+        .tianq{
+            width: 1000px;height: 200px;
+            border: 1px solid #ccc;
+            margin: 10px auto;
+        }
+        .tianq li{
+            float: left;
+            width: 199px;
+            height: 100%;
+            border-right:1px solid #ccc;
+            text-align: center;
+            line-height: 50px;
+        }
+        .tianq li:last-child{
+            border: 0;
+        }
+        .t01{
+            height: 25%;
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+        }
+        .tianq div{
+            height: 25%;
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+        }
+        .tianq .t03{
+            border-bottom: 0px solid #ccc;
+        }
+        .content{
+            width: 1000px;
+            margin: 30px auto;
+        }
+        .content select{
+            width: 60px;
+            height: 20px;
+            border: 1px solid #ccc;
+        }
+        .header{
+            margin-left: 43%;
+            margin-top: 20px;
+            font-size: 30px;
+        }
+        .togote{
+            width: 100px;
+            height: 30px;
+            border: 1px solid #ccc;
+        }
+        .chengshi{
+            margin-top:10px;
+            overflow: hidden;
+            display: none;
+        }
+        .content label{
+            font-family: Calibri;
+        }
+        .shzs{
+            width: 1000px;height: 800px;
+            border: 1px solid #ccc;
+            margin: 10px auto;
+        }
+        .shzs .shzs01{
+            float: left;
+            width: 249px;
+            height: 100%;
+            border-right:1px solid #ccc;
+            text-align: center;
+            /* line-height: 50px; */
+        }
+        .shzs div{
+            height: 12.5%;
+            border-top:1px solid #ccc;
+            line-height: 30px;
+            text-align: center;
+        }
+        .xiangxi{
+            font-size: 12px;
+        }
+        .t00{
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="header"><span class="cityname"></span>天气预报</div>
+<div class="content">
+    <input type="button" value="切换城市" class="togote">
+    <div class="chengshi">
+        <label>省: </label>
+    <select id="province">
+        <option>请选择省</option>
+    </select>
+        <label>市: </label>
+    <select id="city">
+        <option value="">请选择市</option>
+    </select>
+    </div>
+    <ul class="tianq">
+        <li>
+            <div class="t01">日期</div>
+            <div class="t02 t05 r01"></div>
+            <div class="t04 t05 r01"></div>
+            <div class="t03 t05 r01"></div>
+        </li>
+        <li>
+            <div class="t01">气温</div>
+            <div class="t02 t06 r01"></div>
+            <div class="t02 t06 r01"></div>
+            <div class="t03 t06 r01"></div>
+        </li>
+        <li>
+            <div class="t01">天气状况</div>
+            <div class="t02 t07 r01"></div>
+            <div class="t02 t07 r01"></div>
+            <div class="t03 t07 r01"></div>
+        </li>
+        <li>
+            <div class="t01">风力</div>
+            <div class="t02 t08 r01"></div>
+            <div class="t02 t08 r01"></div>
+            <div class="t03 t08 r01"></div>
+        </li>
+        <li>
+            <div class="t01">风向</div>
+            <div class="t02 t09 r01"></div>
+            <div class="t02 t09 r01"></div>
+            <div class="t03 t09 r01"></div>
+        </li>
+    </ul>
+    <ul class="shzs">
+        <li class="shzs01">
+            <div><b>指数</b></div>
+            <div>舒适度指数</div>
+            <div>洗车指数</div>
+            <div>穿衣指数</div>
+            <div>感冒指数</div>
+            <div>运动指数</div>
+            <div>旅游指数</div>
+            <div>紫外线指数</div>
+        </li>
+        <li class="shzs01">
+            <div><b>简介</b></div>
+            <div class="t10"></div>
+            <div class="t11"></div>
+            <div class="t12"></div>
+            <div class="t13"></div>
+            <div class="t14"></div>
+            <div class="t15"></div>
+            <div class="t16"></div>
+        </li>
+        <li class="shzs01 xiangxi">
+        <div class="t00"><b>详细信息</b></div>
+            <div class="t17"></div>
+            <div class="t18"></div>
+            <div class="t19"></div>
+            <div class="t20"></div>
+            <div class="t21"></div>
+            <div class="t22"></div>
+            <div class="t23"></div>
+        </li>
+        <li class="shzs01">
+            <div class="t24"></div>
+            <div class="t25"></div>
+            <div class="t26"></div>
+            <div class="t27"></div>
+            <div class="t28"></div>
+            <div class="t29"></div>
+            <div class="t30"></div>
+            <div class="t31"></div>
+        </li>
+    </ul>
+</div>
+
+</body>
+<script src="jquery.js"></script>
+<script>
+    $.getScript("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js",function () {
+        var city=remote_ip_info.city;
+        //$(".cityname").html(city);
+        update(city);
+    });
+    /*$.ajax({url:
+    "https://free-api.heweather.com/v5/weather",
+        data
+        :{
+        key:"38981dace9c94185a24121eb9cb6634e",city:
+            "太原"
+        }
+        ,
+        success:function (r) {
+            //城市
+            city=r.HeWeather5[0].basic.city;
+            $("option").html(city);
+            //日期
+            var dates=$(".t05");
+            var hots=$(".t06");
+            var weathers=$(".t07");
+            var wind=$(".t08");
+            var last=$(".t09");
+            console.log(r);
+            var t05=r.HeWeather5[0].daily_forecast.forEach(function (v,i) {
+                $(dates[i]).html(v.date)
+            })
+            var t06=r.HeWeather5[0].daily_forecast.forEach(function (v,i) {
+                $(hots[i]).html(v.tmp.min+"°-"+v.tmp.max+"°")
+            })
+            var t07=r.HeWeather5[0].daily_forecast.forEach(function (v,i) {
+                $(weathers[i]).html(v.cond.txt_d)
+            })
+            var t08=r.HeWeather5[0].daily_forecast.forEach(function (v,i) {
+                $(wind[i]).html(`当前风速：${v.wind.spd}Kmph,${v.wind.sc}`)
+            })
+            var t09=r.HeWeather5[0].daily_forecast.forEach(function (v,i) {
+                $(last[i]).html(v.wind.dir)
+            })
+        }
+    });*/
+//    update(city);
+    function update(citys) {
+//        var newcity=city;
+        $(".r01").empty();
+        $(".cityname").html(citys);
+        $.ajax({url:
+                "https://free-api.heweather.com/v5/weather",
+            data
+                    :{
+                key:"38981dace9c94185a24121eb9cb6634e",city:
+                citys
+            }
+            ,
+            success:function (r) {
+                //城市
+//                city=r.HeWeather5[0].basic.city;
+////                $("option").html(city);
+//                $(".cityname").html(city);
+                //日期
+                var dates=$(".t05");
+                var hots=$(".t06");
+                var weathers=$(".t07");
+                var wind=$(".t08");
+                var last=$(".t09");
+                console.log(r);
+                var t05=r.HeWeather5[0].daily_forecast.forEach(function (v,i) {
+                    $(dates[i]).html(v.date)
+                })
+                var t06=r.HeWeather5[0].daily_forecast.forEach(function (v,i) {
+                    $(hots[i]).html(v.tmp.min+"°-"+v.tmp.max+"°")
+                })
+                var t07=r.HeWeather5[0].daily_forecast.forEach(function (v,i) {
+                    $(weathers[i]).html(v.cond.txt_d)
+                })
+                var t08=r.HeWeather5[0].daily_forecast.forEach(function (v,i) {
+                    $(wind[i]).html(`当前风速：${v.wind.spd}Kmph,${v.wind.sc}`)
+                })
+                var t09=r.HeWeather5[0].daily_forecast.forEach(function (v,i) {
+                    $(last[i]).html(v.wind.dir)
+                })
+                t10=r.HeWeather5[0].suggestion.comf.brf;
+                $(".t10").html(t10);
+                t11=r.HeWeather5[0].suggestion.cw.brf;
+                $(".t11").html(t11);
+                t12=r.HeWeather5[0].suggestion.drsg.brf;
+                $(".t12").html(t12);
+                t13=r.HeWeather5[0].suggestion.flu.brf;
+                $(".t13").html(t13);
+                t14=r.HeWeather5[0].suggestion.sport.brf;
+                $(".t14").html(t14);
+                t15=r.HeWeather5[0].suggestion.trav.brf;
+                $(".t15").html(t15);
+                t16=r.HeWeather5[0].suggestion.uv.brf;
+                $(".t16").html(t16);
+
+                t17=r.HeWeather5[0].suggestion.comf.txt;
+                $(".t17").html(t17);
+                t18=r.HeWeather5[0].suggestion.cw.txt;
+                $(".t18").html(t18);
+                t19=r.HeWeather5[0].suggestion.drsg.txt;
+                $(".t19").html(t19);
+                t20=r.HeWeather5[0].suggestion.flu.txt;
+                $(".t20").html(t20);
+                t21=r.HeWeather5[0].suggestion.sport.txt;
+                $(".t21").html(t21);
+                t22=r.HeWeather5[0].suggestion.trav.txt;
+                $(".t22").html(t22);
+                t23=r.HeWeather5[0].suggestion.uv.txt;
+                $(".t23").html(t23);
+            }
+        });
+    }
+    $(".togote").click(function () {
+        $(".chengshi").slideToggle();
+    });
+    $(".togote").one("click",function () {
+        $.getJSON("citys.json",function (r) {
+            var province = {};
+            $.each(r, function (index, value) {
+                if (!province[value.provinceZh]) {
+                    province[value.provinceZh] = [];
+                }
+                province[value.provinceZh].push(value.cityZh);
+            })
+
+        })
+    });
+    $.getJSON("citys.json",function (r) {
+        var province={};
+        $.each(r,function (index,value) {
+            if(!province[value.provinceZh]){
+                province[value.provinceZh]=[];
+            }
+            province[value.provinceZh].push(value.cityZh)
+        })
+        $.each(province,function (index) {
+            $("<option>").text(index).val(index).appendTo("#province")
+        });
+        $("#province").change(function () {
+            var val=$(this).val();
+            var citys=province[val];
+            $("#city").html("<option value=''>选择城市</option>");
+            $.each(citys,function (i,v) {
+                $("<option>").text(v).appendTo("#city")
+            })
+        })
+    });
+    $("#city").change(function () {
+        if($(this).val()!=""){
+            update(this.value)
+        }
+    });
+//$.getScript("http://php.weather.sina.com.cn/js.php?" + $.param({
+//            city :  "北京", //城市
+//            day : 0,
+//            password : "DJOYnieT8234jlsK"
+//        }) , function(json){
+//    alert('地址：' + city + '\n天气：' + status1 + '\n温度' + temperature1 + '°');
+//});
+</script>
+</html>
+<!--http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js-->

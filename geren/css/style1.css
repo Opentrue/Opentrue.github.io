@@ -277,21 +277,29 @@ h2 {
   border-radius: 20px;
   padding: 4px;
   margin-left: 10px;
-
+  color: #37495a;
+  border: 2px solid  rgba(0, 0, 0, 0.8);
 }
-
+.menu a{
+  display: inline;
+  width: 50px;
+  height: 30px;
+  color: #37495a;
+  /* text-align: center; */
+}
 .menu > li {
   background: #b0b0b0;
+
 }
 
 .menu > li:nth-child(2n+1) {
-  background: rgba(0, 0, 0, 0.4);
+  background: #888;
   border: 2px solid white;
 }
 
 .submenu > li {
   background: #e0e0e0;
-  margin-left: 0px;
+  margin-left: -2px;
 }
 
 .submenu > li:nth-child(2n+1) {

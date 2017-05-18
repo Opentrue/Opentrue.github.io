@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_kyaiip2vnritqpvi.css">
+    <style>
+        ul{
+            padding: 0;margin: 0;
+            list-style:none;
+            transition: all 1s;
+        }
+        html,body{
+            overflow: hidden;
+            height: 100%;width: 100%;
+            margin: 0;
+        }
+        *{
+            user-select: none;
+        }
+        .scene{
+            width:100%;height: 100%;
+            /*border: 1px solid red;*/
+            /*margin: 0 auto;*/
+            perspective: 600px ;
+            transform-style: preserve-3d;
+            /*transition: transform 10s;*/
+        }
+        /*.scene:hover{*/
+            /*transform: translate3d(1,1,0,);*/
+        /*}*/
+        .scene ul{
+            width: 100%;height: 100%;
+            /*background: #ccc;*/
+            /*margin: 150px;*/
+            transform-style: preserve-3d;
+            position: relative;
+            /*left: 0;top: 0;*/
+        }
+        .scene ul li{
+            width:100%;height: 100%;
+            position: absolute;
+            left: 0;top: 0;
+            backface-visibility: visible;
+        }
+        .scene ul li:nth-child(1){
+            background: url("img/thb11.jpg");
+            /*background-size: 100% 100%;*/
+            /*background-repeat: no-repeat;*/
+            transform-origin: top;
+            transform: rotateX(90deg);
+        }
+
+        .scene ul li:nth-child(2){
+            background:  url("img/lf01.jpg");
+            background-size: 100% 100%;
+            transform-origin: left;
+            transform: rotateY(-90deg);
+        }
+        .scene ul li:nth-child(3){
+            background: url("img/db11.jpg");
+            /*background-repeat: no-repeat;*/
+            /*background-size: 100% 100%;*/
+            transform-origin: bottom;
+            transform: rotateX(-90deg);
+        }
+        .scene ul li:nth-child(4){
+            background: url("img/lf01.jpg");
+            background-size: 100% 100%;
+            transform-origin: right;
+            transform: rotateY(90deg);
+        }
+        .scene ul li:nth-child(5){
+            background: url("img/top01.jpg");
+            background-size: 100% 100%;
+            transform: translate3d(0,0,100px);
+        }
+        .scene ul li:nth-child(6){
+            background: url("img/top14.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .ch{
+            width:250px;height: 500px;
+            background:url("img/ch.png");
+            background-size: 100% 100%;
+            position: absolute;
+            bottom: -25px;
+            left: 200px;
+        }
+    </style>
+    <style>
+        @font-face {
+            font-family: 'iconfont';  /* project id 293285 */
+            src: url('//at.alicdn.com/t/font_kyaiip2vnritqpvi.eot');
+            src: url('//at.alicdn.com/t/font_kyaiip2vnritqpvi.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_kyaiip2vnritqpvi.woff') format('woff'),
+            url('//at.alicdn.com/t/font_kyaiip2vnritqpvi.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_kyaiip2vnritqpvi.svg#iconfont') format('svg');
+        }
+        *{
+            user-select:none;
+        }
+        .container{
+            width:600px;height: 400px;
+            border: 1px solid #cbb2ff;
+            margin:  0 auto;
+        }
+        .container video{
+            width:100%;
+            background: #eaeace;
+            height: 90%;
+            display: block;
+        }
+        .container .controls{
+            width:100%;height: 10%;
+            background: #ccc;
+            display: flex;
+        }
+        .start{
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+        .reload{
+            width: 40px;height: 40px;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+        .icon{
+            font-family: 'iconfont';
+            text-align: center;
+            line-height: 40px;
+            font-size: 26px;
+        }
+        .progress{
+            width: auto;
+            height: 10px;
+            background: #a8753f;
+            flex-grow: 1;
+            margin-top: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .inner{
+            width: 0;
+            height: 10px;
+            background: #000;
+            border-radius: 10px;
+            transition: all 0.1s;
+        }
+        .time{
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 12px;
+            text-align: center;
+        }
+        .time span{
+            display: block;
+            float: left;
+            width: 45%;
+        }
+        .time b{
+            float: left;
+            width: 10%;
+        }
+        .volume{
+            width: 40px;
+            height: 40px;
+            background: #ccc;
+            position: relative;
+            cursor: pointer;
+        }
+        .volume span{
+            display: block;
+            width: 40px;height: 40px;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+        }
+        .volume .bg{
+            width: 40px;height: 150px;
+            position: absolute;
+            left: 0;bottom: 0;
+            background: rgba(255,255,255,0.6);
+            display: none;
+        }
+        .vol{
+            width: 10px;height: 110px;
+            background: #ccc;
+            margin: 0 auto;
+        }
+        .mask{
+            width: 40px;height: 110px;
+            position: absolute;
+            left: 0;top: 0;
+        }
+        .vol .volinner{
+            width: 10px;
+            height: 10px;
+            background: #000;
+            float: left;
+        }
+        .fullscreen{
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+   <div class="scene">
+       <ul class="box">
+           <li></li>
+           <li>
+               <div class="ch"></div>
+           </li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li>
+               <div class="container">
+                   <video>
+                       <source src="demo.mp4">
+                   </video>
+                   <div class="controls">
+                       <div class="start icon">&#xe6e3;</div>
+                       <div class="stop"></div>
+                       <div class="reload icon">&#xe70c;</div>
+                       <div class="progress">
+                           <div class="inner"></div>
+                       </div>
+                       <div class="time">
+                           <span id="now">00:00</span>
+                           <b>/</b>
+                           <span id="all">00:00</span>
+                       </div>
+                       <div class="volume">
+                           <span class="icon">&#xe60a;</span>
+                           <div class="bg">
+                               <div class="vol">
+                                   <div class="volinner"></div>
+                               </div>
+                               <div class="mask"></div>
+                           </div>
+                       </div>
+                       <div class="fullscreen icon">&#xe600;</div>
+                   </div>
+               </div>
+           </li>
+       </ul>
+   </div>
+</body>
+<script src="hover.js"></script>
+<script>
+    var tops=document.querySelector("li:nth-child(1)");
+    var bottom=document.querySelector("li:nth-child(3)");
+    var front=document.querySelector("li:nth-child(5)");
+    var box=document.querySelector(".box");
+    var clientW=window.innerWidth;
+    var clientH=window.innerHeight;
+    tops.style.width=tops.style.height=bottom.style.width=bottom.style.height=clientW+"px";
+    bottom.style.top=-(clientW-clientH)+"px";
+    front.style.transform=`translateZ(${clientW}px) rotateY(180deg)`;
+    box.style.transform="translateZ(-500px)";
+    box.style.transformOrigin="center center 600px";
+    var startangle=0;
+    var nowangle=0;
+    document.onmousedown=function (e) {
+        var sx=e.clientX;
+        document.onmousemove=function (e) {
+            var cx=e.clientX;
+            nowangle=cx-sx;
+            box.style.transform=`translateZ(-500px)rotateY(${startangle+nowangle}deg)`
+        };
+        document.onmouseup=function () {
+            startangle+=nowangle;
+            document.onmousemove=null;
+            document.onmouseup=null;
+        }
+    }
+
+</script>
+<script>
+    var video=document.querySelector("video");
+    var start=document.querySelector(".start");
+    var reload=document.querySelector(".reload");
+    var progress=document.querySelector(".progress");
+    var inner=document.querySelector(".inner");
+    var now=document.querySelector("#now");
+    var all=document.querySelector("#all");
+    var volume=document.querySelector(".volume");
+    var bg=document.querySelector(".bg");
+    var vol=document.querySelector(".vol");
+    var volinner=document.querySelector(".volinner");
+    var mask=document.querySelector(".mask");
+    var volicon=document.querySelector(".volume span");
+    var fullscreen=document.querySelector(".fullscreen");
+    var container=document.querySelector(".container");
+    var l=progress.offsetWidth;
+    var startflag=true;
+    start.onclick=function () {
+        if(startflag){
+            video.play();
+            start.innerHTML="&#xe6d2;"
+        }else{
+            video.pause();
+            start.innerHTML="&#xe6e3;"
+        }
+        startflag=!startflag;
+    }
+    reload.onclick=function () {
+        video.load();
+        start.innerHTML="&#xe6e3;";
+        startflag=true;
+    };
+    var duration=0;
+    var nowtime=0;
+    video.oncanplay=function () {
+        duration=video.duration;//总时间
+        all.innerHTML=time(duration);
+    };
+    video.ontimeupdate=function () {//进度条改变事件
+        nowtime=video.currentTime;//返回当前播放的位置
+        now.innerHTML=time(nowtime);
+        var width=nowtime/duration;
+        inner.style.width=width*100+"%";
+    }
+    function time(t) {
+        var mins=Math.floor(t/60);
+        var secs=Math.floor(t%60);
+        return mins+":"+(secs<10?"0"+secs:secs)
+    }
+    progress.onmousedown=function (e) {
+        var ox=e.offsetX;
+        var bili=ox/l;
+        var pos=duration*bili;
+        video.currentTime=pos;
+        document.onmousemove=function (e) {
+            var ox=e.clientX-progress.ofsetLeft;
+            var bili=ox/l;
+            var pos=duration*bili;
+            video.currentTime=pos;
+        };
+        document.onmouseup=function () {
+            document.onmousemove=null;
+            document.onmouseup=null;
+        }
+    }
+    hover(volume,function () {
+        bg.style.display="block"
+    },function () {
+        bg.style.display="none";
+        mask.onmousemove=null;
+        mask.onmouseup=null;
+    });
+    mask.onmousedown=function (e) {
+        var oy=e.offsetY;
+        oy=oy>100?100:oy;
+        var v=1-oy/100;
+        video.volume=v;
+        if(v==0){
+            volicon.innerHTML="&#xe752;";
+        }else{
+            volicon.innerHTML="&#xe60a;";
+        }
+        volinner.style.marginTop=oy+"px";
+        mask.onmousemove=function (e) {
+            var oy=e.offsetY;
+            oy=oy>100?100:oy;
+            var v=1-oy/100;
+            video.volume=v;
+            if(v==0){
+                volicon.innerHTML="&#xe752;";
+            }else{
+                volicon.innerHTML="&#xe60a;";
+            }
+            volinner.style.marginTop=oy+"px";
+        };
+        mask.onmouseup=function () {
+            mask.onmousemove=null;
+            mask.onmouseup=null;
+        }
+    };
+    var volflag=true;
+    volicon.onclick=function () {
+        if(volflag){
+            video.muted=true;
+            volicon.innerHTML="&#xe752;";
+        }else{
+            volicon.innerHTML="&#xe60a;";
+            video.muted=false;//静音
+        }
+        volflag=!volflag;
+    };
+    var fullflag=true;
+    fullscreen.onclick=full;
+    video.ondblclick=full;
+    document.onkeydown=function (e) {
+        if(e.keyCode==27){
+            fullflag=false;
+            full()
+        }
+    };
+    function full() {
+        if(fullflag){
+            fullscreen.innerHTML="&#xe601;";
+            //container.webkitRequestFullScreen();  canceFullScreen
+            container.style.width="100%";
+            container.style.height="100%";
+        }else{
+            fullscreen.innerHtML="&#xe600;";
+            container.style.width="600px";
+            container.style.height="400px";
+        }
+        fullflag=!fullflag;
+        l=progress.offsetWidth;
+    }
+</script>
+</html>
