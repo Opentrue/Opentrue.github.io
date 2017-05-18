@@ -126,8 +126,17 @@ canvas{
   transform: translateY(100%);
   transition: all 500ms ease-in-out;
   transition-delay: 0ms;
-  background: url('../img/bg009.jpg');
+  background: url('../../427314.jpg');
   background-size: 100% 100%;
+  position: relative;
+}
+.section:after{
+  content: "";
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 ._active .section {
   transform: translateY(0);
@@ -209,18 +218,18 @@ canvas{
 .feilei{
   width: 100px;
   height: 50px;
-  margin-left: 10px;
+  margin-left: 18px;
 }
 .feilei00{
   height: 50px;
-  color: #84795B;
+  color: #d4cfc1;
 }
 .feilei00 li{
   float: left;
   margin-left: 20px;
   width: 50px;
   height: 50px;
-  margin: 0;
+  margin: -5px 0;
   cursor: pointer;
 }
 .xiaomi{
@@ -492,6 +501,7 @@ background-repeat: no-repeat; */
 }
 .padding-120 {
     padding: 120px 0px;
+    z-index: 10;
 }
 .container00 {
     padding-right: 15px;
@@ -511,7 +521,7 @@ background-repeat: no-repeat; */
 }
 .container00 p{
     font-size: 14px;
-    color: #55575d;
+    color: #b5b9c5;
     line-height: 24px;
     margin: 15px 0 1.75em;
 }
@@ -587,6 +597,14 @@ background-repeat: no-repeat; */
     font-weight: 500;
     color: #959595;
     margin: 0px;
+}
+@keyframes tt{
+  0%{
+    transform: translateY(10px)
+  }
+  100%{
+    transform: translateY(-10px)
+  }
 }
 .contact-form{
   float: left;

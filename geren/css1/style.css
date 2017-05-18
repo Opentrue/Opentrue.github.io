@@ -312,16 +312,17 @@ h3 {
 .container {
   width: 840px;
   height: auto;
-  margin: 0 auto;
+  margin: -25px auto;
+  overflow: hidden;
 }
 
 header {
   font-family: 'Bree Serif', serif;
   text-align: center;
-  margin: 50px 0 25px;
+  margin: 25px 0 25px;
   /* color: #34495E; */
 }
 header p {
   margin: 0;
-  color: rgba(52, 73, 94, 0.4);
+  color: rgba(165, 171, 177, 0.8);
 }
