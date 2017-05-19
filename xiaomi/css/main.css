@@ -272,7 +272,7 @@ aside{
 .banner aside>ul{
 	float: left;
 	width: 234px;
-	margin: 20px 0; 
+	margin: 10px 0; 
 }
 .banner aside>ul>li{
 	float: left;
@@ -413,6 +413,7 @@ aside{
 	margin: auto;
 	background: rgba(0, 0, 0, 0);
 	z-index: 100;
+	cursor: pointer;
 }
 .youj{
 	width: 41px;
@@ -424,13 +425,14 @@ aside{
 	margin: auto;
 	background: rgba(0, 0, 0, 0);
 	z-index: 100;
+	cursor: pointer;
 }
-.youj:hover{
-	background: rgba(0, 0, 0, 0.3);
+/* .youj:hover{
+	background: rgba(0, 0, 0, 0.2);
 }
 .zuoj:hover{
-	background: rgba(0, 0, 0, 0.3);
-}
+	background: rgba(0, 0, 0, 0.2);
+} */
 
 .dian div:hover{
 	background: #fff;
@@ -475,8 +477,8 @@ aside{
 	width: 76px;
 	margin: 0.5px 0.65px;
 	float: left;	
-	border-right: 1px solid #665E57;
-	border-bottom: 1px solid #665E57;
+	/* border-right: 1px solid #665E57;
+	border-bottom: 1px solid #665E57; */
 	padding: 20px 10px;
 }
 
